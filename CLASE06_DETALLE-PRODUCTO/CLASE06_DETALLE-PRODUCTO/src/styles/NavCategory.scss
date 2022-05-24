@@ -1,0 +1,13 @@
+.filtro-principal{
+  background-color: #ff5500;
+  display: flex;
+  justify-content: center;
+  gap:30px;
+  padding:10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;   
+  :hover{
+      color:white;
+  }
+}
