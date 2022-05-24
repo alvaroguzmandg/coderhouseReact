@@ -1,6 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget";
 import NavCategory from "../NavCategory/NavCategory";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export default function NavBar(){
 
