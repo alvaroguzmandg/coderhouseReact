@@ -1,2 +1,0 @@
-# coderhouseReact
-Coderhouse - Curso React
