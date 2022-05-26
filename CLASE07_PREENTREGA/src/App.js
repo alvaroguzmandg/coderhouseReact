@@ -7,7 +7,6 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 
-
 function App() {
   return (
   <>
@@ -20,6 +19,7 @@ function App() {
       <Route exact path="/cart" element={<Cart/>}/>
     </Routes>
   </BrowserRouter>
+
   </>
   )
 } 
