@@ -1,8 +1,12 @@
-# RUNCLUB
+# PROYECTO RUNCLUB
 
 ## Descripción
 
 Proyecto para el curso de ReactJS de CoderHouse
+
+**Status:** Primera Entrega del Proyecto Final - Clase: Routing y Navegación
+
+
 Permite seleccionar ciertos productos, navegar a sus detalles y elegir cuántos productos se quieren comprar.
 Al clickear sobre el botón "realizar compra", pide llenar un formulario con datos básicos y luego de confirmar
 se genera un id de orden para el usuario y en firebase se guarda la orden con los productos que compró.
@@ -29,26 +33,23 @@ se genera un id de orden para el usuario y en firebase se guarda la orden con lo
     "web-vitals": "^2.1.4"
 
 ## Descargar el proyecto
+**Este proyecto requiere NodeJS para su ejecución.**
 
-**Este proyecto requiere NodeJS para su ejecución.
 
-
-** Instalar dependencias:
-
+## Instalar dependencias:
 ### `npm install`
 
 
-Instalar React Router DOM
-
+## Instalar React Router DOM:
 ### `npm i react-router-dom`
 
 
-Correr el servidor:
 
+## Correr el servidor:
 ### `npm start`
 
 
 Se abre una pestaña del navegador en el puerto 3000:
 
-**Sino copiar esta URL y pegarla en el navegador: `http://localhost:3000`
+**Sino copiar esta URL y pegarla en el navegador: `http://localhost:3000`**
 
