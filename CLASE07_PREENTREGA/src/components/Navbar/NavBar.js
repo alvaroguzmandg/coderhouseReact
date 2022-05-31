@@ -1,5 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget";
 import NavCategory from "../NavCategory/NavCategory";
+import NavBarContainer from "../NavBarContainer/NavBarContainer";
 import {NavLink} from "react-router-dom";
 
 export default function NavBar(){
@@ -15,6 +16,8 @@ export default function NavBar(){
         margin: "0 auto"
     }
 
+
+
     return(
     <>
     <header className="header" >
@@ -22,9 +25,7 @@ export default function NavBar(){
         <NavLink to="/"><img src="https://alvaroguzmandg.github.io/coderhouse/images/logo-runclub.png" alt="Logo"></img></NavLink>
         </div>
         <ul className="links" style={navStyles}>
-            <li><NavLink to="/">INICIO</NavLink></li>
-            <li><NavLink to="/products">PRODUCTOS</NavLink></li>
-            <li><NavLink to="/cart">CARRITO</NavLink></li>
+            <NavBarContainer/>
         </ul>
         <CartWidget cantidad={0}/>
         
