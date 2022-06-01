@@ -12,7 +12,7 @@ export default function ItemListContainer ({categoryId}) {
   const task = new Promise ((resolve, reject) => {
     
   setTimeout(() => {
-    resolve(productos);
+    // resolve(productos);
     setLoading(false);
   }, 2000)
 })
