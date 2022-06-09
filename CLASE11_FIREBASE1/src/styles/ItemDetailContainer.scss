@@ -1,0 +1,58 @@
+.vista-detalle{
+  width: 90%;
+  margin:0 auto;
+  margin-top: 50px;
+  background-color: rgba(151, 151, 151, 0.293);
+  .vista-producto-bloque{
+    width: 70%;
+    padding: 30px 0px;
+    margin: 0 auto;
+    display: flex;
+    gap:30px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    .vista-bloque-izq{
+      width: 50%;
+      .vista-producto-imagen{
+        background-color: white;
+        display: block;
+      }
+    }
+    .vista-bloque-der{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      .vista-producto-marca{
+        display: inline-block;
+        color:black;
+        font-size: 20px;
+        line-height: 10px;
+        font-weight: 900;
+      }
+      .vista-producto-modelo{
+        display: inline-block;
+        color:#ff5500;
+        font-size: 40px;
+        font-weight: 900;
+      }
+    }
+    .vista-producto-precio{
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .vista-producto-descripcion{
+      display: block;
+      text-align: left;
+      color:#ff5500;
+      font-size: 10px;
+      font-weight: 900;
+      .vista-producto-descripcion-texto{
+        display: block;
+        color:black;
+    }
+    }
+  }
+}
