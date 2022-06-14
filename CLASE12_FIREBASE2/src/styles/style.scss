@@ -1,0 +1,48 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './Navbar.scss';
+@import './NavCategory.scss';
+@import './ItemListContainer.scss';
+@import './ItemDetailContainer.scss';
+@import './Item.scss';
+@import './ItemCount.scss';
+@import './Footer.scss';
+@import './Cart.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    @media only screen and (max-width: 900px) {
+        font-size: 11px;
+    }
+    @media only screen and (max-width: 600px) {
+        font-size: 10px;
+    }
+}
+body {
+    
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App {
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}

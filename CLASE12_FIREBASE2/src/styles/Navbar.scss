@@ -1,0 +1,56 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+  background-color: #212529;
+  .logo {
+      max-width: 200px;
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+      img {
+          width: 100%;
+      }
+  }
+  .links{
+      width: 60%;
+      li{
+          display: inline-block;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+          a{
+            color:white;
+            &:hover{
+                color:#ff5500;
+            }
+          }
+      }
+  }
+  .carrito{
+      display: flex;
+      a{
+        display: flex;
+        width: 100%;
+        gap:10px;
+        align-items: center;
+        color:#ff5500;
+        .carrito-icono{
+            display: block;
+            width: 50%;
+            img{ 
+                height: 50px;
+            }
+        }
+        .carrito-contador{
+            display: block;
+            background-color: white;
+            font-size: 12px;
+            font-weight: 900;
+            padding:5px 10px;
+            box-sizing: border-box;
+        }
+        
+    }
+  }
+  
+}
