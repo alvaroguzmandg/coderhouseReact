@@ -12,6 +12,7 @@ const [orderId, setOrderId] = useState();
 const [precioTotal, setPrecioTotal] =useState(0);
 
 
+
 //Agregar al carrito
 const addToCart = (item, count) => {
   if(isInCart(item.id)) {

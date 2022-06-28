@@ -17,7 +17,7 @@ export default function NavBarContainer(){
           link:"CARRITO"
       },{
         id:3,
-          url:"/back",
+          url:"/uploader",
           link:"UPLOADER"
       }]
       
