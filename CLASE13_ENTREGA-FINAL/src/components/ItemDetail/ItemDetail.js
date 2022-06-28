@@ -35,13 +35,16 @@ const ComprarButton = ()=>{
             <span className="vista-producto-descripcion">
               Descripción del Producto:
               <span className="vista-producto-descripcion-texto">{item.description}</span>
-              {isInCart(item.id) ? (<ComprarButton/>) : 
+              <span className="vista-producto-descripcion-texto">Stock disponible: {item.stock}</span>
+              {
+              item.stock > 0 ? 
+              isInCart(item.id) ? (<ComprarButton/>) : 
               <ItemCount 
                 stock={item.stock} 
                 count={count}
                 onSubmit={() => addToCart(item, count)}
                 onDelete= {()=>removeFromCart(item, count)}
-                setCount={setCount}/>   
+                setCount={setCount}/> : <span className="vista-producto-stock">SIN STOCK</span>
               }           
             </span>
           </span>

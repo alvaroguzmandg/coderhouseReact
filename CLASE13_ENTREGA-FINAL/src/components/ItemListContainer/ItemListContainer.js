@@ -9,34 +9,11 @@ export default function ItemListContainer ({categoryId}) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   
-//   const task = new Promise ((resolve, reject) => {
-    
-//   setTimeout(() => {
-//     resolve(productos);
-//     setLoading(false);
-//   }, 500)
-// })
-
-// useEffect(()=>{
-//   setLoading(true);
-//   task
-//   .then((res)=> { if(categoryId){
-//     setItems(res.filter(item => item.category_id === +categoryId));
-//   }
-//   else{
-//     setItems(res);
-//   }})
-//   .catch((error)=> console.log(error))
-// }, [categoryId])
-
-
-
-
 
 useEffect(() => {
   setTimeout(() => {
     setLoading(false);
-  }, 500)
+  }, 3000)
   
   const db = getFirestore()
   if(categoryId){
