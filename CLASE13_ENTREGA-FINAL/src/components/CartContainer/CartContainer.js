@@ -1,70 +1,50 @@
-import CartCheckout from "../CartCheckout/CartCheckout";
-import CartOrder from "../CartOrder/CartOrder";
-import React from "react"
-import { useState, useContext } from "react"
-import { CartContext } from "../../context/CartContext";
 
-import {addDoc, getFirestore, collection, doc, runTransaction} from "firebase/firestore"
+import CartItemList from "../../components/CartItemList/CartItemList";
+import CartCount from "../../components/CartCount/CartCount";
+import {NavLink} from "react-router-dom";
+
+import React from "react"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext";
 
 export default function CartContainer() {
   
   const { cart, precioTotal, deleteAll } = useContext(CartContext);
-  const [data, setData] = useState();
-  const [orderId, setOrderId] = useState();
 
-
-const handleChange = (event) => {
-  const { name, value } = event.target;
-  setData({ ...data, [name]: value });
-}
-
-const order= {
-  buyer: data, 
-  items: cart,
-  total: precioTotal,
-};
-
-
-const handleSubmit = async (event) =>{
-  event.preventDefault();
-  const db = getFirestore();
-  const orderColection = collection(db, "orders");
-  const productsCollection = collection(db, "productos")
-  await addDoc(orderColection, order).then(({id}) => { 
-    setOrderId(id)
-    updateProducts()
-    alert(`Tu orden nro ${id} fue realizada con éxito`)
-    })
-  .catch(error => console.log(error))
-}
-
-const updateProducts = async () => {
-  const db = getFirestore ()
-  cart.forEach( async (item) => {
-    const productRef = doc(db, `productos`, item.id)
-    await runTransaction(db, async (transaction) => {
-    const transfDoc = await transaction.get(productRef);
-    if (!transfDoc.exists()) {
-      console.error("El documento no existe")
-    }
-    const newStock = transfDoc.data().stock - item.quantity;
-    transaction.update(productRef, { stock: newStock });
-  });
-  })
-}
-
-
-
+  const BorrarCarrito = ()=>{
+    return(
+      <span className="quitar-carrito" onClick={() =>deleteAll()}>VACIAR CARRITO DE COMPRAS</span>
+    )
+  }
+  
   return(
     <>
-
       <div className="cart-container">
-        {orderId ? <CartOrder orderId={orderId} order={order}></CartOrder> : <CartCheckout handleChange={handleChange} handleSubmit={handleSubmit}></CartCheckout>}
+        <div className="cart-left">
+          <div className="cart-header">
+            <span className="cart-container-title">TU CARRITO</span>
+            <span className="cart-container-legal">
+              Los artículos en tu carrito no están reservados. Terminá el proceso de compra ahora para hacerte con ellos.
+          </span>
+          </div>
+          <div className="cart-items-container">
+            <CartItemList items={cart} />
+          </div>
+        </div>
+        <div className="cart-right">
+        <span className="cart-container-title-resume">RESUMEN DEL PEDIDO</span>
+          <span className="cart-container-subtitle">Cantidad de productos: <CartCount/></span>
+          <span className="cart-container-price">Total a pagar: ${precioTotal}</span>
+          <NavLink className="cart-container-buy" to="/checkout">IR AL CHECKOUT</NavLink>
+          <BorrarCarrito></BorrarCarrito>
+        </div>
       </div>
-
-
+      <span className="cart-bottom">
+        
+      </span>
     </>
   )
+
 }
 
 

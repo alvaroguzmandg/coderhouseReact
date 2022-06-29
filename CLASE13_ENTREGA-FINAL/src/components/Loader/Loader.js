@@ -3,8 +3,6 @@ import { SpinnerDotted } from 'spinners-react';
 
 const Loader =()=>{
   
-  
-
   return(
     <>
     <div className="text-white">
@@ -12,6 +10,7 @@ const Loader =()=>{
       </div>
     </>
   )
+
 }
 
 export default Loader;

@@ -1,0 +1,20 @@
+.empty-search {
+    margin-top: 50px;
+    display: block;
+    text-transform: uppercase;
+    a {
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        &:hover {
+            background-color: #ff5500;
+        }
+    }
+}

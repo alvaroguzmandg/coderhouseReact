@@ -1,25 +1,27 @@
 import ItemCount from "../ItemCount/ItemCount";
+
 import {Link} from "react-router-dom";
 import React from "react";
 import { CartContext } from "../../context/CartContext";
-
+import{useContext} from "react";
 
 export default function ItemDetail ({item}) {
 
-const {addToCart, removeFromCart, isInCart} = React.useContext(CartContext)
-const [count, setCount] = React.useState(1)
+  const {addToCart, removeFromCart, isInCart} = React.useContext(CartContext)
+  const [count, setCount] = React.useState(1)
+  const {BackProduct} = useContext(CartContext)
 
-const ComprarButton = ()=>{
-  return(
-    <>
-    <Link to={`/cart`}>
-    <button className="boton-agregar">
-      Terminar mi compra
-    </button>
-    </Link>
-    </>
-  )
-}
+  const ComprarButton = ()=>{
+    return(
+      <>
+      <Link to={`/cart`}>
+      <button className="boton-agregar">
+        Terminar mi compra
+      </button>
+      </Link>
+      </>
+    )
+  }
 
     return(
       <>
@@ -50,6 +52,8 @@ const ComprarButton = ()=>{
           </span>
         </div>   
       </div>
+      <BackProduct></BackProduct>
       </>
     )
+    
 }

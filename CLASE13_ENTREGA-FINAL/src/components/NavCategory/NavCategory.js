@@ -11,9 +11,9 @@ export default function NavCategory({categoryId}) {
 
     const db = getFirestore()
     const categoriesRef = collection(db, "categorias")
-        getDocs(categoriesRef).then(snapshots =>{
-            setCategories(snapshots.docs.map(doc =>({id: doc.id, ...doc.data()})))
-        })
+    getDocs(categoriesRef).then(snapshots =>{
+        setCategories(snapshots.docs.map(doc =>({id: doc.id, ...doc.data()})))
+    })
 
     }, [categoryId]);
 
@@ -25,10 +25,11 @@ export default function NavCategory({categoryId}) {
     }
 
     return(
-    <>
-    <div className="filtro-principal">
-        {categories.map((cat) => (<NavLink key={`${cat.id}`}to={`../category/${cat.name}`}><Button texto={`Zapatillas ${cat.name}`}/></NavLink>))}
-    </div>
-    </>
+        <>
+        <div className="filtro-principal">
+            {categories.map((cat) => (<NavLink key={`${cat.id}`}to={`../category/${cat.name}`}><Button texto={`Zapatillas ${cat.name}`}/></NavLink>))}
+        </div>
+        </>
     )
+
 }

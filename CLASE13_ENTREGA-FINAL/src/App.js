@@ -4,6 +4,7 @@ import Uploader from "./views/Uploader/Uploader";
 import Products from "./views/Products/Products";
 import Product from "./views/Product/Product";
 import Category from "./views/Category/Category";
+import Checkout from "./views/Checkout/Checkout";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { CartProvider } from "./context/CartContext"
 import React from "react"
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/category/:categoryId" element={<Category/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
         <Route exact path="/uploader" element={<Uploader/>}/>
+        <Route exact path="/checkout" element={<Checkout/>}/>
       </Routes>
     </CartProvider>
   </BrowserRouter>

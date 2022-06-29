@@ -1,8 +1,6 @@
 import React from "react";
-import {CartContext} from "../../context/CartContext"
+
 export default function AddButton({count, setCount, stock, onSubmit}){
-
-
 
   /* --------------------- Función para restar contador --------------------- */
   const onAdd = () => {
@@ -30,9 +28,7 @@ export default function AddButton({count, setCount, stock, onSubmit}){
       <button className="boton-agregar" onClick={() =>handleOnSubmit()}>Agregar al carrito {count}</button>
     )
   }
-
-
-
+  
 
   return(
     <>
