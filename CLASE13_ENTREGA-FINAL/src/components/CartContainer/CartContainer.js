@@ -1,4 +1,6 @@
+//Componente que genera la vista del carrito con el listado de productos y el resumen del pedido
 
+//Componentes utilizados
 import CartItemList from "../../components/CartItemList/CartItemList";
 import CartCount from "../../components/CartCount/CartCount";
 import {NavLink} from "react-router-dom";
@@ -9,8 +11,10 @@ import { CartContext } from "../../context/CartContext";
 
 export default function CartContainer() {
   
+  //Variables de CartContext
   const { cart, precioTotal, deleteAll } = useContext(CartContext);
 
+  //Botón para borrar el carrito
   const BorrarCarrito = ()=>{
     return(
       <span className="quitar-carrito" onClick={() =>deleteAll()}>VACIAR CARRITO DE COMPRAS</span>
@@ -20,6 +24,7 @@ export default function CartContainer() {
   return(
     <>
       <div className="cart-container">
+
         <div className="cart-left">
           <div className="cart-header">
             <span className="cart-container-title">TU CARRITO</span>
@@ -31,6 +36,7 @@ export default function CartContainer() {
             <CartItemList items={cart} />
           </div>
         </div>
+
         <div className="cart-right">
         <span className="cart-container-title-resume">RESUMEN DEL PEDIDO</span>
           <span className="cart-container-subtitle">Cantidad de productos: <CartCount/></span>
@@ -38,6 +44,7 @@ export default function CartContainer() {
           <NavLink className="cart-container-buy" to="/checkout">IR AL CHECKOUT</NavLink>
           <BorrarCarrito></BorrarCarrito>
         </div>
+
       </div>
       <span className="cart-bottom">
         

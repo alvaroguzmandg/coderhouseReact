@@ -1,3 +1,6 @@
+//Widget del Carrito que muestra el icono y el contador
+
+//Componentes utilizados
 import CartCount from "../CartCount/CartCount";
 
 import { Link } from "react-router-dom";

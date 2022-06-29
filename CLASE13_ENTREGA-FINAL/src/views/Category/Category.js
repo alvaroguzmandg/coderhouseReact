@@ -1,3 +1,6 @@
+// Vista de página de Categoría
+
+// Componentes utilizados
 import NavBar from "../../components/Navbar/NavBar"
 import ItemListContainer from "../../components/ItemListContainer/ItemListContainer"
 import Footer from "../../components/Footer/Footer"
@@ -13,6 +16,7 @@ export default function Category() {
     <div className="App">
       <NavBar/>
       <main>
+        {/* Componente que trae el listado de productos */}
         <ItemListContainer title="Producto" categoryId={categoryId} />
       </main>
       <Footer/>

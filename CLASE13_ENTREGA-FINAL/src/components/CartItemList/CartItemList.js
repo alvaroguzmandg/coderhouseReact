@@ -1,3 +1,6 @@
+//Componente que lista los productos en la vista del cart
+
+//Componentes utilizados
 import CartItem from "../CartItem/CartItem";
 
 import {CartContext} from "../../context/CartContext"

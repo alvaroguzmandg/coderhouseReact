@@ -1,3 +1,5 @@
+//Componente que aplica el contador del carrito
+
 import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
@@ -17,7 +19,6 @@ export default function CartCount (){
     
     }
     contarQuantity();
-
 
   }, [cart]);
 

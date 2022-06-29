@@ -1,5 +1,10 @@
-import React, { useState } from "react"
-import OrderItem from "../OrderItem/OrderItem"
+//Muesta todos los datos de la orden de compra
+
+//Componentes utilizados
+import CheckoutOrderItem from "../CheckoutOrderItem/CheckoutOrderItem"
+
+import React from "react"
+
 
 export default function CheckoutOrder({order, orderId, data}) {
   
@@ -27,7 +32,7 @@ export default function CheckoutOrder({order, orderId, data}) {
         <h2 className="checkout-title">Listado de productos</h2>
         <span className="checkout-resume-products">
           
-        {order.items.map((item, index) =>(<OrderItem key={index} item={item} />))}
+        {order.items.map((item, index) =>(<CheckoutOrderItem key={index} item={item} />))}
         </span>
     </div>
     </>

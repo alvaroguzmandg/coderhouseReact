@@ -1,3 +1,6 @@
+// Vista de página de detakke dek producto
+
+// Componentes utilizados
 import NavBar from "../../components/Navbar/NavBar";
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer";
 import Footer from "../../components/Footer/Footer";
@@ -14,7 +17,8 @@ export default function Product () {
       <div className="App">
         <NavBar/>
         <main>
-        <ItemDetailContainer productId={productId}/>
+          {/* Componente que muestra el detalle dle producto */}
+          <ItemDetailContainer productId={productId}/>
         </main>
         <Footer/>
       </div>

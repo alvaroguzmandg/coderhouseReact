@@ -1,3 +1,5 @@
+// Componente con el Spinner de carga
+
 import React from "react";
 import { SpinnerDotted } from 'spinners-react';
 

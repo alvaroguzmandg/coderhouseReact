@@ -1,3 +1,5 @@
+// Componente con la muestra del item en la página de checkout
+
 import {Card} from 'react-bootstrap'
 import {Link, useNavigate} from "react-router-dom"
 import React from "react"

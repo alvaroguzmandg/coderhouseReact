@@ -1,3 +1,5 @@
+//Componente con la vista del producto en el carrito
+
 import {Card} from 'react-bootstrap'
 import {Link} from "react-router-dom"
 

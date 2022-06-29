@@ -1,3 +1,5 @@
+// Componente que renderiza el menu de navegación
+
 import React from "react";
 import {NavLink} from "react-router-dom";
 

@@ -1,3 +1,6 @@
+//Componente con la grilla de productos
+
+//Componentes utilizados
 import ItemList from "../ItemList/ItemList";
 import ItemListEmpty from "../ItemListEmpty/ItemListEmpty";
 import Loader from "../Loader/Loader";
@@ -16,6 +19,7 @@ export default function ItemListContainer ({categoryId}) {
   
   useEffect(() => {
     
+    //Una vez que los productos están cargados, desaparece el Loader
     (items !== []) ?  setTimeout(() => {setLoading(false);}, 1000) : setLoading(true)
     
     const db = getFirestore()
@@ -34,11 +38,13 @@ export default function ItemListContainer ({categoryId}) {
       })
     }
 
+    // Muestra las categorias que están en la colección de Firebase
     const categoriesRef = collection(db, "categorias")
     getDocs(categoriesRef).then(snapshots =>{
       setCategories(snapshots.docs.map(doc =>({id: doc.id, ...doc.data()})))
     })
 
+    // Muestra las marcas que están en la colección de Firebase
     const brandsRef = collection(db, "marcas")
       getDocs(brandsRef).then(snapshots =>{
         setBrands(snapshots.docs.map(doc =>({id: doc.id, ...doc.data()})))
@@ -52,12 +58,14 @@ export default function ItemListContainer ({categoryId}) {
     setSearch(e.target.value);
   }
 
+  //Función para limpiar la búsqueda
   const limpiarBusqueda = (e) =>{
     e.preventDefault();
     setSearch("default");
     document.getElementById('category').value = "Todas las marcas";
   }
 
+  //Componente con el título de la página filtrada
   const TituloBusqueda = () =>{
     return(
       <span className="titulo-busqueda">LISTADO DE PRODUCTOS {search}</span>
@@ -68,16 +76,30 @@ export default function ItemListContainer ({categoryId}) {
     <>
       <span className="filtro">
         <h2>Buscá por marca</h2>
+        {/* Filtro de productos */}
         <form>
           <select className="campo-formulario" name="category" id="category" defaultValue="" onChange={handleSubmit} required>
           <option defaultValue="default">Todas las marcas</option>
-          {brand.map((bra) => (<option key={`${bra.id}`} value={`${bra.marca}`}>{`${bra.marca}`}</option>))}
+            {
+              // Toma las marcas traídas de Firebase y las muestra
+              brand.map((bra) => (<option key={`${bra.id}`} value={`${bra.marca}`}>{`${bra.marca}`}</option>))
+            }
           </select>
           <input type="reset" className="filtro-busqueda" onClick={limpiarBusqueda} value="Limpiar Búsqueda"/>
-          {(search) && search !== "default" ? <TituloBusqueda></TituloBusqueda> : false}
+          {
+            //Si hay un filtro realizado, muestra el título correspondiente
+            (search) && search !== "default" ? <TituloBusqueda></TituloBusqueda> : false
+          }
         </form>
+
+        {/* Grilla de productos */}
         <div className="itemlist-container" id="itemlist-container">
-          {loading ? <Loader/> : (items.length === 0) ? <ItemListEmpty></ItemListEmpty> : <ItemList filter={search} items={items}/>}
+          {
+            //Esperando que carguen los productos, se muestra el loader
+            // Si no hay productos, muestra la lista vacía
+            // En caso de haber productos, muestra el listado y pasa las props del filtro en caso de ser aplicado
+            loading ? <Loader/> : (items.length === 0) ? <ItemListEmpty></ItemListEmpty> : <ItemList filter={search} items={items}/>
+          }
         </div>
       </span>
     </>

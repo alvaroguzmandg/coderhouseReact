@@ -1,5 +1,6 @@
+//Componente que muestra un aviso de lista vacía
+
 import React from "react"
-import { Link } from "react-router-dom"
 import {CartContext} from "../../context/CartContext"
 import{useContext} from "react";
 

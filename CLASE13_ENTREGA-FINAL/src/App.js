@@ -13,24 +13,25 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 function App() {
-
+  
   return (
   <>
-  <BrowserRouter>
-    <CartProvider>
-      <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/products" element={<Products/>}/>
-        <Route exact path="/product/:productId" element={<Product/>} />
-        <Route exact path="/category/:categoryId" element={<Category/>}/>
-        <Route exact path="/cart" element={<Cart/>}/>
-        <Route exact path="/uploader" element={<Uploader/>}/>
-        <Route exact path="/checkout" element={<Checkout/>}/>
-      </Routes>
-    </CartProvider>
-  </BrowserRouter>
+    <BrowserRouter>
+      <CartProvider>
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/products" element={<Products/>}/>
+          <Route exact path="/product/:productId" element={<Product/>} />
+          <Route exact path="/category/:categoryId" element={<Category/>}/>
+          <Route exact path="/cart" element={<Cart/>}/>
+          <Route exact path="/uploader" element={<Uploader/>}/>
+          <Route exact path="/checkout" element={<Checkout/>}/>
+        </Routes>
+      </CartProvider>
+    </BrowserRouter>
   </>
   )
+
 } 
 
 export default App;

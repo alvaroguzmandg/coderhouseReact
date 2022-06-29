@@ -1,3 +1,6 @@
+// Vista de página para cargar productos en Firebase
+
+// Componentes utilizados
 import NavBar from "../../components/Navbar/NavBar";
 import UploaderProduct from "../../components/UploaderProduct/UploaderProduct";
 import Footer from "../../components/Footer/Footer";  
@@ -12,6 +15,9 @@ export default function Uploader() {
   const MySwal = withReactContent(Swal)
   const [status, setLogin] = useState(false);
     
+  // Función de validación de usuario
+  // Está hardcodeado el usuario y contraseña en "admin"
+  // En futuras actualizaciones, será definido en Firebase
   function handleSubmit (event) {
     event.preventDefault();
     let usuario = event.target.usuario.value
@@ -27,6 +33,7 @@ export default function Uploader() {
     }
   }
 
+  // Componente de validación de ingreso al Admin
   const UploaderValidator = () =>{
     return(
       <form onSubmit={handleSubmit}>
@@ -40,7 +47,11 @@ export default function Uploader() {
   }
 
   const Contenido = () =>{
-    return(status ? <UploaderProduct></UploaderProduct> : <UploaderValidator></UploaderValidator>)
+    return(
+      // Si el estado es "true" muestra el admin para cargar productos
+      // Si el estado es "false" requiere autenticarse
+      status ? <UploaderProduct></UploaderProduct> : <UploaderValidator></UploaderValidator>
+      )
   }
 
   return(

@@ -1,3 +1,5 @@
+//Componente con el formulario de compra del checkout
+
 import { Link } from "react-router-dom";
 import React from "react"
 

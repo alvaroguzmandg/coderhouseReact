@@ -1,3 +1,5 @@
+//Componente de vista del producto en la grilla de productos
+
 import {Card} from 'react-bootstrap'
 import {Link, useNavigate} from "react-router-dom"
 import React from "react"

@@ -1,3 +1,6 @@
+// Componente que renderiza el header de navegación principal
+
+// Componentes utilizados
 import CartWidget from "../CartWidget/CartWidget";
 import NavCategory from "../NavCategory/NavCategory";
 import NavBarContainer from "../NavBarContainer/NavBarContainer";

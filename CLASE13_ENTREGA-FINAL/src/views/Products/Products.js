@@ -1,3 +1,6 @@
+// Vista de página que muestra todos los productos
+
+// Componentes utilizados
 import NavBar from "../../components/Navbar/NavBar";
 import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 import Footer from "../../components/Footer/Footer";
@@ -11,7 +14,8 @@ export default function Products(){
       <div className="App">
         <NavBar/>
         <main>
-        <ItemListContainer/>
+          {/* Componente que lista los productos */}
+          <ItemListContainer/>
         </main>
         <Footer/>
       </div>

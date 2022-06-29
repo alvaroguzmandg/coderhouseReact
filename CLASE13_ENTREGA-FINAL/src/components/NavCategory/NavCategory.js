@@ -1,3 +1,5 @@
+// Componente que renderiza el menu de navegación secundario con las categorías obtenidas desde Firebase
+
 import React from "react";
 import { useEffect } from "react";
 import {NavLink} from "react-router-dom";
@@ -17,7 +19,7 @@ export default function NavCategory({categoryId}) {
 
     }, [categoryId]);
 
-    
+    //Componente con el botón de cada categoría
     const Button = ({texto}) =>{
         return (
             <span className="filtro-categorias">{texto}</span>
@@ -27,7 +29,10 @@ export default function NavCategory({categoryId}) {
     return(
         <>
         <div className="filtro-principal">
-            {categories.map((cat) => (<NavLink key={`${cat.id}`}to={`../category/${cat.name}`}><Button texto={`Zapatillas ${cat.name}`}/></NavLink>))}
+            {
+                //Busca las categorias listadas y genera un link por cada una
+                categories.map((cat) => (<NavLink key={`${cat.id}`}to={`../category/${cat.name}`}><Button texto={`Zapatillas ${cat.name}`}/></NavLink>))
+            }
         </div>
         </>
     )

@@ -1,3 +1,4 @@
+//Componente que maneja el contador y el botón de agregar al carrito de la vista del producto en el ItemDetail
 import React from "react";
 
 export default function AddButton({count, setCount, stock, onSubmit}){

@@ -60,12 +60,10 @@ const CartProvider = ({children}) => {
   }
 
 
-
   // Borrar carrito
   const deleteAll = () =>{
     setCart([])
   }
-
 
 
   //Función para ver si el producto está en el carrito
@@ -73,13 +71,11 @@ const CartProvider = ({children}) => {
     return cart.find(item => item.id === id)
   }
 
-
-
+  //Actualización del precio total en el carrito
   useEffect(() => {
     setPrecioTotal(cart.reduce((acc,{quantity,price})=> acc + quantity * price,0)
     );
   }, [cart]);
-
 
 
     return (
