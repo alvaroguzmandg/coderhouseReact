@@ -25,6 +25,7 @@ export default function ItemDetailContainer ({ productId }) {
       }
       else{
         setItem([])
+        setLoading(false);
       }
     })
   }, [productId]);
