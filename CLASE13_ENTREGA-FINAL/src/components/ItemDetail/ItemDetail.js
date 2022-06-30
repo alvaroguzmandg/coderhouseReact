@@ -41,6 +41,7 @@ export default function ItemDetail ({item}) {
             <span className="vista-producto-descripcion">
               Descripción del Producto:
               <span className="vista-producto-descripcion-texto">{item.description}</span>
+              <span className="vista-producto-descripcion-texto">Categoria {item.category}</span>
               <span className="vista-producto-descripcion-texto">Stock disponible: {item.stock}</span>
               {
               // Si el producto tien stock comprueba si el producto ya está en el carrito
